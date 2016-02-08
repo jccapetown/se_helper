@@ -1,0 +1,9 @@
+module Compuscan_Server_StaffRole_Access 2.0.1;
+require {
+        type staff_t;
+        type httpd_sys_content_t;
+        class file {getattr read open write create unlink};
+        class dir {search read getattr open write add_name create setattr remove_name rmdir};
+}
+allow staff_t httpd_sys_content_t:file {getattr read open write create unlink};
+allow staff_t httpd_sys_content_t:dir {search read getattr open write add_name create setattr remove_name rmdir};
